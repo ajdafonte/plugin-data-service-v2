@@ -40,6 +40,7 @@ dependencies {
     implementation("org.glassfish.jersey.core", "jersey-server", ext["jerseyVersion"].toString())
     implementation("org.glassfish.jersey.containers", "jersey-container-servlet-core", ext["jerseyVersion"].toString())
     implementation("org.glassfish.jersey.containers", "jersey-container-jetty-http", ext["jerseyVersion"].toString())
+    implementation("org.glassfish.jersey.ext", "jersey-bean-validation", ext["jerseyVersion"].toString())
 
     implementation("org.glassfish.jersey.media", "jersey-media-json-jackson", ext["jerseyVersion"].toString())
     implementation("org.glassfish.jersey.inject", "jersey-hk2", ext["jerseyVersion"].toString())
