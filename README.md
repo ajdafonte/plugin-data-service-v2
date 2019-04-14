@@ -53,7 +53,7 @@ Here's a short summary of the tech stack used in the development of this compone
 ### Component Configuration
 
 - In file `clients-config.json` is possible to define all clients plugin configurations.
-- Application is listening at port 80 (hardcoded)
+- Application is listening at port 80
 
 ### Component Functionality
 
@@ -71,6 +71,6 @@ Here's a short summary of the tech stack used in the development of this compone
 - In folder `misc`, there's a file named `plugin-data-service-v2-performance-test.jmx` that contain a [JMeter](https://jmeter.apache.org/) test plan in order 
 to perform some performance validations of the available endpoints;
 - Due to time constraints:
-    - It's not possible to change clients plugin configurations at runtime
-    - Jetty server configurations are hardcoded (port, threadpool settings, etc) 
+    - Not able to change clients plugin configurations at runtime
+    - Jetty server configurations (port, thread-pool settings, etc) are defined at code level 
     - Unit and integration tests are missing
