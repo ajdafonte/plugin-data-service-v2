@@ -3,5 +3,5 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-rootProject.name = "plugin-data-service-v2"
+rootProject.name = 'plugin-data-service-v2'
 
