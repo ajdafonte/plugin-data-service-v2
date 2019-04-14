@@ -27,9 +27,11 @@ Execute the following gradle task:
 gradlew.bat test
 ```
 
+However, see comment in section 'Additional Remarks'.
+
 ### Running the component
 ```
-gradlew.bat bootRun
+gradlew.bat run
 ```
 
 ### Import into IDE
@@ -46,8 +48,7 @@ In this section will be described some technical details of this project.
   
 Here's a short summary of the tech stack used in the development of this component.
 - Java 8, Jersey, Jetty, Gradle
-- Other dependencies: 
-    - slf4j, lombok  
+- Other dependencies: slf4j, lombok  
 
 ### Component Configuration
 
