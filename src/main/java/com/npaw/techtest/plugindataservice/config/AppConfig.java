@@ -1,8 +1,5 @@
 package com.npaw.techtest.plugindataservice.config;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.ws.rs.ApplicationPath;
 
 import org.glassfish.jersey.server.ResourceConfig;
@@ -15,15 +12,10 @@ public class AppConfig extends ResourceConfig
 {
     public AppConfig()
     {
-        //
+        // register resources (controllers)
         register(PluginDataRestResource.class);
 
-        //
+        // define dependency injection
         register(new AppBinder());
-
-        //
-        final Map<String, Object> props = new HashMap<>();
-        props.put("clientsConfig", ClientsPluginConfiguration.getMyConfigData());
-        addProperties(props);
     }
 }

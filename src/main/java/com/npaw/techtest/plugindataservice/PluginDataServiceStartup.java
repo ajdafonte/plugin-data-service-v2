@@ -22,17 +22,12 @@ public class PluginDataServiceStartup
 
     public static void main(final String[] args)
     {
-        final int maxThreads = 450;
-        final int minThreads = 60;
-        final int idleTimeout = 120;
-
-        final QueuedThreadPool threadPool = new QueuedThreadPool(maxThreads, minThreads, idleTimeout);
+        final int maxThreads = 250;
+        final QueuedThreadPool threadPool = new QueuedThreadPool(maxThreads);
         final Server server = new Server(threadPool);
 
-//        final Server server = new Server();
-
         final ServerConnector connector = new ServerConnector(server);
-        connector.setPort(8080);
+        connector.setPort(80);
         server.setConnectors(new Connector[] {connector});
 
         final ServletContextHandler servletContextHandler = new ServletContextHandler(NO_SESSIONS);

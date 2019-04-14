@@ -1,27 +1,29 @@
-package com.npaw.techtest.plugindataservice.pluginconfig;
+package com.npaw.techtest.plugindataservice.pluginconfig.bizz;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Predicate;
 
-import javax.ws.rs.core.Configuration;
-import javax.ws.rs.core.Context;
+import javax.inject.Inject;
 
-import com.npaw.techtest.plugindataservice.common.PluginConfigData;
+import com.npaw.techtest.plugindataservice.pluginconfig.domain.PluginConfigData;
+import com.npaw.techtest.plugindataservice.pluginconfig.repo.PluginConfigRepository;
 
 
 public class DefaultPluginConfigService implements PluginConfigService
 {
-    @Context
-    private Configuration configuration;
+    private final PluginConfigRepository pluginConfigRepository;
+
+    @Inject
+    public DefaultPluginConfigService(final PluginConfigRepository pluginConfigRepository)
+    {
+        this.pluginConfigRepository = pluginConfigRepository;
+    }
 
     @Override
     public Optional<List<PluginConfigData>> getPluginConfigByClient(final String accountCode)
     {
-        final ConcurrentHashMap<String, List<PluginConfigData>> clientsConfig =
-            (ConcurrentHashMap<String, List<PluginConfigData>>) configuration.getProperty("clientsConfig");
-        return Optional.ofNullable(clientsConfig.get(accountCode));
+        return pluginConfigRepository.findPluginConfigBy(accountCode);
     }
 
     @Override

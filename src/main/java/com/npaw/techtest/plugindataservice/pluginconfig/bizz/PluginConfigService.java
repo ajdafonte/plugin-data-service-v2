@@ -1,9 +1,9 @@
-package com.npaw.techtest.plugindataservice.pluginconfig;
+package com.npaw.techtest.plugindataservice.pluginconfig.bizz;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.npaw.techtest.plugindataservice.common.PluginConfigData;
+import com.npaw.techtest.plugindataservice.pluginconfig.domain.PluginConfigData;
 
 
 public interface PluginConfigService

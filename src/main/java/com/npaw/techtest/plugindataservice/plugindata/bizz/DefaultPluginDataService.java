@@ -7,9 +7,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import javax.inject.Inject;
 
-import com.npaw.techtest.plugindataservice.common.HostConfigData;
-import com.npaw.techtest.plugindataservice.common.PluginConfigData;
-import com.npaw.techtest.plugindataservice.pluginconfig.PluginConfigService;
+import com.npaw.techtest.plugindataservice.pluginconfig.bizz.PluginConfigService;
+import com.npaw.techtest.plugindataservice.pluginconfig.domain.HostConfigData;
+import com.npaw.techtest.plugindataservice.pluginconfig.domain.PluginConfigData;
 import com.npaw.techtest.plugindataservice.plugindata.domain.PluginData;
 
 

@@ -1,12 +1,12 @@
 package com.npaw.techtest.plugindataservice.plugindata.rest;
 
 import javax.inject.Inject;
-import javax.validation.constraints.NotBlank;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import com.npaw.techtest.plugindataservice.plugindata.bizz.GetPluginDataParameter;
 import com.npaw.techtest.plugindataservice.plugindata.bizz.PluginDataService;
@@ -26,12 +26,12 @@ public class PluginDataRestResource
 
     @GET
     @Produces(value = MediaType.APPLICATION_XML)
-    public PluginDataRest getPluginData(
-        @QueryParam("accountCode") @NotBlank(message = "Account code must not be blank") final String accountCode,
-        @QueryParam("targetDevice") @NotBlank(message = "Target device must not be blank") final String targetDevice,
-        @QueryParam("pluginVersion") @NotBlank(message = "Plugin version must not be blank") final String pluginVersion)
+    public Response getPluginData(
+        @QueryParam("accountCode") final String accountCode,
+        @QueryParam("targetDevice") final String targetDevice,
+        @QueryParam("pluginVersion") final String pluginVersion)
     {
         final GetPluginDataParameter parameter = new GetPluginDataParameter(accountCode, targetDevice, pluginVersion);
-        return PluginDataRestMapper.map(pluginDataService.getPluginData(parameter));
+        return Response.ok(PluginDataRestMapper.map(pluginDataService.getPluginData(parameter))).build();
     }
 }
